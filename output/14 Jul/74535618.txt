@@ -1,0 +1,5 @@
+exercisedb=# SELECT ROUND(avg(amount)::numeric,2) FROM orders;
+ round 
+-------
+ 49.33
+(1 row)

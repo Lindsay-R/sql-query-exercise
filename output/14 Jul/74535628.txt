@@ -1,0 +1,23 @@
+exercisedb=# SELECT name, state FROM customers;
+         name         |   state    
+----------------------+------------
+ Donato Rempel        | Virginia
+ Tyrell Von DDS       | Colorado
+ Ms. Sofia Rowe       | Ohio
+ Evert Pfeffer        | Arizona
+ Elta Dicki           | Montana
+ Zelma Davis          | Ohio
+ Edna Hintz           | California
+ Coleman Prohaska Jr. | Colorado
+ Wilhelmine Huels     | Maine
+ Hulda Will III       | Florida
+(10 rows)
+
+exercisedb=# SELECT name, state FROM customers WHERE state LIKE '%Colorado%';
+         name         |  state   
+----------------------+----------
+ Tyrell Von DDS       | Colorado
+ Coleman Prohaska Jr. | Colorado
+(2 rows)
+
+exercisedb=# 

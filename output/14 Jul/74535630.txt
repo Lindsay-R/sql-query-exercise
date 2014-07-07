@@ -1,0 +1,26 @@
+
+exercisedb=# SELECT name, city, state FROM customers;
+         name         |       city       |   state    
+----------------------+------------------+------------
+ Donato Rempel        | Janachester      | Virginia
+ Tyrell Von DDS       | Verdieborough    | Colorado
+ Ms. Sofia Rowe       | Opheliaborough   | Ohio
+ Evert Pfeffer        | Port Ozella      | Arizona
+ Elta Dicki           | Deckowtown       | Montana
+ Zelma Davis          | Alport           | Ohio
+ Edna Hintz           | North Kelliestad | California
+ Coleman Prohaska Jr. | Rigobertoside    | Colorado
+ Wilhelmine Huels     | West Lauryntown  | Maine
+ Hulda Will III       | Mikeberg         | Florida
+(10 rows)
+
+
+
+
+exercisedb=# SELECT name, city, state FROM customers WHERE city LIKE '%Rigobertoside%' and state LIKE '%Colorado%';
+         name         |     city      |  state   
+----------------------+---------------+----------
+ Coleman Prohaska Jr. | Rigobertoside | Colorado
+(1 row)
+
+exercisedb=# 

@@ -1,0 +1,7 @@
+exercisedb=# SELECT min(amount) FROM orders;
+ min  
+------
+ 1.69
+(1 row)
+
+exercisedb=# 

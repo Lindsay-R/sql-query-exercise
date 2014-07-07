@@ -1,0 +1,49 @@
+Lindsays-MacBook-Air:sql-query-exercise lindsayrecknell$ psql
+psql (9.3.4)
+Type "help" for help.
+
+lindsayrecknell=# \list
+                                               List of databases
+      Name       |      Owner      | Encoding |   Collate   |    Ctype    |          Access privileges          
+-----------------+-----------------+----------+-------------+-------------+-------------------------------------
+ exercisedb      | lindsayrecknell | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ lindsayrecknell | lindsayrecknell | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ postgres        | lindsayrecknell | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0       | lindsayrecknell | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/lindsayrecknell                 +
+                 |                 |          |             |             | lindsayrecknell=CTc/lindsayrecknell
+ template1       | lindsayrecknell | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/lindsayrecknell                 +
+                 |                 |          |             |             | lindsayrecknell=CTc/lindsayrecknell
+ testdb          | lindsayrecknell | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+(6 rows)
+
+lindsayrecknell=# \connect exercisedb
+You are now connected to database "exercisedb" as user "lindsayrecknell".
+exercisedb=# SELECT * FROM exercisedb;
+ERROR:  relation "exercisedb" does not exist
+LINE 1: SELECT * FROM exercisedb;
+                      ^
+exercisedb=# \dt
+           List of relations
+ Schema |    Name    | Type  |  Owner  
+--------+------------+-------+---------
+ public | customers  | table | gschool
+ public | items      | table | gschool
+ public | orderitems | table | gschool
+ public | orders     | table | gschool
+(4 rows)
+
+exercisedb=# 
+exercisedb=# SELECT * FROM customers
+exercisedb-# ;
+ id |         name         |              email               |       address       |       city       |   state    |  zipcode   
+----+----------------------+----------------------------------+---------------------+------------------+------------+------------
+  1 | Donato Rempel        | ladarius@waelchi.org             | 890 Ullrich Plains  | Janachester      | Virginia   | 77714
+  2 | Tyrell Von DDS       | cleo_frami@bartondenesik.name    | 63337 Abdullah Camp | Verdieborough    | Colorado   | 69882-7027
+  3 | Ms. Sofia Rowe       | jacky_funk@bayerprosacco.name    | 1991 Kyler Village  | Opheliaborough   | Ohio       | 15599-5395
+  4 | Evert Pfeffer        | alisa.luettgen@hoeger.org        | 1311 Khalil Shores  | Port Ozella      | Arizona    | 34713
+  5 | Elta Dicki           | lesly@heaney.org                 | 3878 Alyce Lock     | Deckowtown       | Montana    | 42114-6195
+  6 | Zelma Davis          | osborne@mohr.biz                 | 184 Hazel Lane      | Alport           | Ohio       | 87119
+  7 | Edna Hintz           | elisha_mclaughlin@pouros.biz     | 2550 Hassan Pass    | North Kelliestad | California | 40909-5637
+  8 | Coleman Prohaska Jr. | taryn.becker@doyle.org           | 32202 Zemlak Ridge  | Rigobertoside    | Colorado   | 95667-8653
+  9 | Wilhelmine Huels     | alexander_rice@ornjakubowski.com | 44097 Elvie Divide  | West Lauryntown  | Maine      | 55164-9178
+ 10 | Hulda Will III       | ella_sanford@stracke.com         | 3746 Ashton Divide :

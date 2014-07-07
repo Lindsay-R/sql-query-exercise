@@ -1,0 +1,7 @@
+Last login: Mon Jul  7 10:58:05 on ttys000
+Lindsays-MacBook-Air:~ lindsayrecknell$ psql
+psql (9.3.4)
+Type "help" for help.
+
+lindsayrecknell=# CREATE DATABASE exercisedb;
+CREATE DATABASE
