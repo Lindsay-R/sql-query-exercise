@@ -1,0 +1,85 @@
+exercisedb=# SELECT * FROM items;
+ id |  name   |    description    
+----+---------+-------------------
+  1 | ski01   | downhill ski
+  2 | ski02   | cross country ski
+  4 | bike01  | mountain bike
+  5 | bike02  | road bike
+  6 | bike03  | tricycle
+  7 | boot01  | hiking boots
+  8 | boot02  | ski boots
+  9 | boot03  | moon boots
+  3 | board01 | snow board
+(9 rows)
+
+
+exercisedb=# SELECT * FROM orders;
+ id | customer_id | amount 
+----+-------------+--------
+  1 |           6 |  63.35
+  2 |           5 |  55.42
+  3 |           7 |   91.7
+  4 |           4 |  49.52
+  5 |           4 |   4.81
+  6 |           5 |  65.82
+  7 |           4 |  25.91
+  8 |           8 |  64.59
+  9 |           3 |  68.89
+ 10 |           7 |  85.04
+ 11 |           1 |  19.67
+ 12 |           6 |  29.74
+ 13 |           5 |  61.56
+ 14 |           6 |  30.24
+ 15 |           1 |   5.67
+ 16 |           9 |  31.45
+ 17 |           2 |   1.69
+ 18 |          10 |  30.91
+ 19 |           3 |  97.11
+ 20 |           2 |    5.4
+ 21 |           1 |  55.97
+
+
+
+
+exercisedb=# SELECT * FROM orderitems;
+ id  | order_id | item_id 
+-----+----------+---------
+   1 |        1 |       3
+   2 |        1 |       2
+   3 |        1 |       4
+   4 |        2 |       5
+   5 |        2 |       4
+   6 |        2 |       8
+   7 |        2 |       9
+   8 |        3 |       3
+   9 |        3 |       4
+  10 |        3 |       8
+  11 |        4 |       6
+  12 |        4 |       5
+  13 |        4 |       9
+  14 |        4 |       2
+  15 |        5 |       5
+  16 |        5 |       8
+  17 |        5 |       3
+  18 |        5 |       9
+  19 |        6 |       9
+  20 |        6 |       6
+  21 |        6 |       1
+
+
+
+
+——— *** here’s the answer *** ———
+exercisedb=# SELECT orders.customer_id, items.name FROM orders INNER JOIN orderitems ON orders.id=orderitems.order_id INNER JOIN items ON orderitems.item_id=items.id WHERE customer_id = 2; 
+ customer_id |  name  
+-------------+--------
+           2 | boot01
+           2 | bike03
+           2 | ski01
+           2 | bike01
+           2 | bike02
+           2 | boot03
+           2 | ski02
+           2 | boot01
+(8 rows)
+

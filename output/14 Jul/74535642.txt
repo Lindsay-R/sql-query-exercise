@@ -1,0 +1,71 @@
+
+exercisedb=# SELECT * FROM orders;
+ id | customer_id | amount 
+----+-------------+--------
+  1 |           6 |  63.35
+  2 |           5 |  55.42
+  3 |           7 |   91.7
+  4 |           4 |  49.52
+  5 |           4 |   4.81
+  6 |           5 |  65.82
+  7 |           4 |  25.91
+  8 |           8 |  64.59
+  9 |           3 |  68.89
+ 10 |           7 |  85.04
+ 11 |           1 |  19.67
+ 12 |           6 |  29.74
+ 13 |           5 |  61.56
+ 14 |           6 |  30.24
+ 15 |           1 |   5.67
+ 16 |           9 |  31.45
+ 17 |           2 |   1.69
+ 18 |          10 |  30.91
+ 19 |           3 |  97.11
+ 20 |           2 |    5.4
+ 21 |           1 |  55.97
+
+
+exercisedb=# exercisedb=# SELECT id, name FROM customers;
+ id |         name         
+----+----------------------
+  1 | Donato Rempel
+  2 | Tyrell Von DDS
+  3 | Ms. Sofia Rowe
+  4 | Evert Pfeffer
+  5 | Elta Dicki
+  6 | Zelma Davis
+  7 | Edna Hintz
+  8 | Coleman Prohaska Jr.
+  9 | Wilhelmine Huels
+ 10 | Hulda Will III
+(10 rows)
+
+
+
+exercisedb=# SELECT orders.id, customers.name, orders.amount FROM customers INNER JOIN orders ON orders.customer_id = customers.id; 
+
+ id |         name         | amount 
+----+----------------------+--------
+  1 | Zelma Davis          |  63.35
+  2 | Elta Dicki           |  55.42
+  3 | Edna Hintz           |   91.7
+  4 | Evert Pfeffer        |  49.52
+  5 | Evert Pfeffer        |   4.81
+  6 | Elta Dicki           |  65.82
+  7 | Evert Pfeffer        |  25.91
+  8 | Coleman Prohaska Jr. |  64.59
+  9 | Ms. Sofia Rowe       |  68.89
+ 10 | Edna Hintz           |  85.04
+ 11 | Donato Rempel        |  19.67
+ 12 | Zelma Davis          |  29.74
+ 13 | Elta Dicki           |  61.56
+ 14 | Zelma Davis          |  30.24
+ 15 | Donato Rempel        |   5.67
+ 16 | Wilhelmine Huels     |  31.45
+ 17 | Tyrell Von DDS       |   1.69
+ 18 | Hulda Will III       |  30.91
+ 19 | Ms. Sofia Rowe       |  97.11
+ 20 | Tyrell Von DDS       |    5.4
+ 21 | Donato Rempel        |  55.97
+ 22 | Evert Pfeffer        |  44.42
+exercisedb=#
